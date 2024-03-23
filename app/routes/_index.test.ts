@@ -1,5 +1,3 @@
-import { expect, test } from 'vitest';
-
 function sampleFunction(a: number, b: number) {
   return a + b;
 }
