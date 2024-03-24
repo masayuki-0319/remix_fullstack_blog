@@ -10,7 +10,11 @@
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "test": "vitest",
-    "db:migrate": "prisma migrate dev"
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seeds.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0",
@@ -34,6 +38,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prisma": "^5.11.0",
+    "tsx": "^4.7.1",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.1",
