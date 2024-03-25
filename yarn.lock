@@ -4086,6 +4086,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fishery@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "fishery@npm:2.2.2"
+  dependencies:
+    lodash.mergewith: "npm:^4.6.2"
+  checksum: 10c0/31bc39f51dc10bfe2dc975ad16f4a6da5b5ad2d83de3180b4671cf391fb650b6cb8a582ec7b78559f4161b427cebed04e01578c1849c32adf6206fde7d8e3d98
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4":
   version: 3.2.0
   resolution: "flat-cache@npm:3.2.0"
@@ -5362,6 +5371,13 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: 10c0/402fa16a1edd7538de5b5903a90228aa48eb5533986ba7fa26606a49db2572bf414ff73a2c9f5d5fd36b31c46a5d5c7e1527749c07cbcf965ccff5fbdf32c506
+  languageName: node
+  linkType: hard
+
+"lodash.mergewith@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "lodash.mergewith@npm:4.6.2"
+  checksum: 10c0/4adbed65ff96fd65b0b3861f6899f98304f90fd71e7f1eb36c1270e05d500ee7f5ec44c02ef979b5ddbf75c0a0b9b99c35f0ad58f4011934c4d4e99e5200b3b5
   languageName: node
   linkType: hard
 
@@ -7321,6 +7337,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.7.1"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
+    fishery: "npm:^2.2.2"
     isbot: "npm:^4.1.0"
     prisma: "npm:^5.11.0"
     react: "npm:^18.2.0"
