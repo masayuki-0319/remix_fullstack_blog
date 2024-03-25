@@ -1,7 +1,5 @@
 import { Post } from '.prisma/client';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '~/db.server';
 
 class PostRepository {
   async create(params: Pick<Post, 'title' | 'content'>) {
