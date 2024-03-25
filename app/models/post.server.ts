@@ -8,13 +8,12 @@ class PostRepository {
     const { title, content } = params;
     if (!title || !content) throw new Error('Title and content are required');
 
-    await prisma.post.create({
+    return await prisma.post.create({
       data: {
         title: title,
         content: content,
       },
     });
-    return;
   }
 
   async find(params: { id: Post['id'] }) {
