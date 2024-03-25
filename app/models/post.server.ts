@@ -1,20 +1,17 @@
 import { Post } from '.prisma/client';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '~/db.server';
 
 class PostRepository {
   async create(params: Pick<Post, 'title' | 'content'>) {
     const { title, content } = params;
     if (!title || !content) throw new Error('Title and content are required');
 
-    await prisma.post.create({
+    return await prisma.post.create({
       data: {
         title: title,
         content: content,
       },
     });
-    return;
   }
 
   async find(params: { id: Post['id'] }) {
