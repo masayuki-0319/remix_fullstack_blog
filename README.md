@@ -1,36 +1,55 @@
-# Welcome to Remix + Vite!
+# Remix + Prisma フルスタックアプリケーション
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+## 開発環境の構築
 
-## Development
-
-Run the Vite dev server:
-
-```shellscript
-npm run dev
-```
-
-## Deployment
-
-First, build your app for production:
+依存ライブラリをダウンロードします。
 
 ```sh
-npm run build
+yarn install
 ```
 
-Then run the app in production mode:
+開発用 DB の Docker イメージをダウンロードし、開発用 DB サーバを起動します。
 
 ```sh
-npm start
+docker compose up -d
 ```
 
-Now you'll need to pick a host to deploy it to.
+DB をマイグレーションします。
 
-### DIY
+```sh
+yarn db:migrate
+```
 
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
+開発環境用の環境変数を作成します。
 
-Make sure to deploy the output of `npm run build`
+```sh
+cp .env.example .env
+```
 
-- `build/server`
-- `build/client`
+開発用サーバを起動します。
+
+```sh
+yarn dev
+```
+
+アプリを開き、画面を確認できたら構築完了です。
+
+```sh
+open http://localhost:5173/
+```
+
+## テスト
+
+以下のコマンドを実行すると、テスト実行できます。
+
+```sh
+yarn test
+```
+
+## DB 操作コマンド
+
+| コマンド              | 説明                                                      |
+| --------------------- | --------------------------------------------------------- |
+| yarn db:migrate       | 開発用とテスト用 DB をマイグレーションします              |
+| yarn db:migrate:reset | 開発用とテスト用 DB をリセットします                      |
+| yarn db:seed          | ./prisma/seed.ts を読み込み、初期データを DB に登録します |
