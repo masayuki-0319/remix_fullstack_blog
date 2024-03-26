@@ -1,4 +1,5 @@
 import { postTestFactory } from '~/test/factories/post';
+
 import { postRepository } from './post.server';
 
 describe('PostRepository', () => {

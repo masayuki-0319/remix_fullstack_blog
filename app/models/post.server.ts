@@ -1,4 +1,5 @@
 import { Post } from '.prisma/client';
+
 import { prisma } from '~/db.server';
 
 class PostRepository {
