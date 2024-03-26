@@ -4,7 +4,6 @@ import { Link, useLoaderData } from '@remix-run/react';
 
 import { postRepository } from '~/models/post.server';
 
-
 export const loader = async () => {
   const posts = await postRepository.findAll();
 
