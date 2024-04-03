@@ -10,8 +10,9 @@
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "test": "dotenv -e .env.test -- vitest",
-    "db:migrate": "yarn dev:db:migrate && yarn test:db:migrate",
+    "db:migrate": "yarn dev:db:migrate && yarn dev:generate:client && yarn test:db:migrate",
     "dev:db:migrate": "prisma migrate dev",
+    "dev:generate:client": "prisma generate",
     "test:db:migrate": "dotenv -e .env.test -- prisma migrate dev --skip-seed",
     "db:migrate:reset": "yarn dev:db:migrate:reset && yarn test:db:migrate:reset",
     "dev:db:migrate:reset": "prisma migrate reset --force",
@@ -31,6 +32,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@quramy/prisma-fabbrica": "^2.1.2",
     "@remix-run/dev": "^2.8.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",

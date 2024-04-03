@@ -1,11 +1,11 @@
-import { postTestFactory } from '~/test/factories/post';
+import { PostTestFactory } from '~/test/factories/post';
 
 import { postRepository } from './post.server';
 
 describe('PostRepository', () => {
   describe('create', () => {
     it('新しいポストを登録できる', async () => {
-      const params = postTestFactory.build();
+      const params = await PostTestFactory.build();
 
       const createdPost = await postRepository.create(params);
 
@@ -16,7 +16,7 @@ describe('PostRepository', () => {
 
   describe('find', () => {
     it('引数の id が存在すると、ポストを取得できる', async () => {
-      const post = await postTestFactory.create();
+      const post = await PostTestFactory.create();
       const foundPost = await postRepository.find({ id: post.id });
 
       expect(foundPost).toBeDefined();
@@ -26,7 +26,7 @@ describe('PostRepository', () => {
 
   describe('findAll', () => {
     it('全てのポストを取得できる', async () => {
-      await postTestFactory.createList(3);
+      await PostTestFactory.createList(3);
 
       const posts = await postRepository.findAll();
 
@@ -36,7 +36,7 @@ describe('PostRepository', () => {
 
   describe('delete', () => {
     it('引数の id が存在すると、ポストを削除できる', async () => {
-      const post = await postTestFactory.create();
+      const post = await PostTestFactory.create();
 
       await postRepository.delete({ id: post.id });
 
