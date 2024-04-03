@@ -6,3 +6,4 @@ node_modules
 .env
 
 vitest.config.ts.timestamp*
+app/test/__generated__/*
