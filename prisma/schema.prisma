@@ -8,12 +8,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// テスト用モックデータ生成
-generator fabbrica {
-  provider = "prisma-fabbrica"
-  output   = "../app/test/__generated__/fabbrica"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
